@@ -20,10 +20,11 @@ const FollowMouse = () => {
       window.addEventListener('pointermove', handleMove)
     }
 
-    // cleanup
-    // cuando el componente se desmonta
-    // cuando cambian las dependencias, antes de ejecutar el efecto de nuevo
-    return () => {
+    // cleanup:
+    // -> cuando el componente se desmonta
+    // -> cuando cambian las dependencias, antes de ejecutar
+    //    el efecto de nuevo
+    return () => { // cleanup method
       window.removeEventListener('pointermove', handleMove)
       setPosition({ x: 0, y: 0 })
     }
